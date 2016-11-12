@@ -8,6 +8,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.support.AnnotationConfigContextLoader;
 
 import com.joker.hibernate.PersistenceConfig;
+import com.joker.hibernate.model.M_User;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -22,6 +23,20 @@ public class UserDaoTest {
 	public void whenFetchAllUser(){
 		userDao.findAllUsers();
 		
+	}
+	
+	@Test
+	public void whenAddingNewUser(){
+		M_User user = new M_User();
+		
+		user.setUserId(2);
+		user.setFirstName("Ayn Sophia");
+		user.setLastName("Vivar");
+		user.setPassword("Passw0rd");
+		user.setUserName("avivar");
+		user.setRegDate("20161111");
+		
+		userDao.save(user);
 	}
 	
 

@@ -24,7 +24,7 @@ public class UserDaoImpl extends AbstractDao<Integer, M_User> implements UserDao
 	}
 
 	public void save(M_User user) {
-		// TODO Auto-generated method stub
+		persist(user);
 		
 	}
 

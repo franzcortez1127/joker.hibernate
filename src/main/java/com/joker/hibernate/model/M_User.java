@@ -16,7 +16,6 @@ public class M_User implements Serializable{
 	private static final long serialVersionUID = -8159218832705024219L;
 
 	@Id
-	@GeneratedValue
 	@Column(name="USERID")
 	private int userId;
 	
