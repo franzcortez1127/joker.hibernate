@@ -40,9 +40,9 @@ public class PersistenceConfig {
     public DataSource restDataSource() {
     	DriverManagerDataSource dataSource = new DriverManagerDataSource();
         
-        dataSource.setUrl("jdbc:oracle:thin:@localhost:1521:orcl");
-        dataSource.setUsername("joker");
-        dataSource.setPassword("Passw0rd911");
+        dataSource.setUrl(env.getProperty("connection.url"));
+        dataSource.setUsername(env.getProperty("connection.username"));
+        dataSource.setPassword(env.getProperty("connection.password"));
         dataSource.setDriverClassName("org.hibernate.dialect.Oracle10gDialect");
         
         return dataSource;
